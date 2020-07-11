@@ -20,6 +20,11 @@ public class LoginController {
     @Autowired
     UserService service;
 
+    @GetMapping("/")
+    public String welcome(){
+        return "welcome to intoTheJobsBackEnd";
+    }
+
     @PostMapping("/login")
     public ResponseEntity<Utente> auth(@RequestBody UserBean userToAuth) {
         List<Utente> list = this.service.getAll()
