@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
     @Autowired
     UserDao dao;
@@ -24,8 +24,6 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public Utente getUtenteById(Integer id) {
-
-        System.out.println(this.encoder.encode("ciao"));
         return this.dao.getUtenteById(id);
     }
 
