@@ -2,7 +2,6 @@ package com.intothejobs.be.endpoints;
 
 
 import com.intothejobs.be.businessobject.Utente;
-import com.intothejobs.be.dao.UserDao;
 import com.intothejobs.be.model.UserBean;
 import com.intothejobs.be.services.UserService;
 import org.apache.commons.lang3.StringUtils;
@@ -21,7 +20,7 @@ public class LoginController {
     UserService service;
 
     @GetMapping("/")
-    public String welcome(){
+    public String welcome() {
         return "welcome to intoTheJobsBackEnd";
     }
 
@@ -31,15 +30,15 @@ public class LoginController {
                 .stream()
                 .filter(ut -> ut.getNome().equalsIgnoreCase(userToAuth.getUsername()) && ut.getPass().equals(userToAuth.getPassword()))
                 .collect(Collectors.toList());
-        return !list.isEmpty() ? new ResponseEntity<>(list.get(0),HttpStatus.FOUND) : new ResponseEntity<>(HttpStatus.NOT_FOUND)        ;
+        return !list.isEmpty() ? new ResponseEntity<>(list.get(0), HttpStatus.FOUND) : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
     @GetMapping("/getUserById/{id}")
-    public ResponseEntity<Utente> getUtente(@PathVariable("id") String id){
-        Utente retrieved = null;
-        if(StringUtils.isNumeric(id)) {
+    public ResponseEntity<Utente> getUtente(@PathVariable("id") String id) {
+        Utente retrieved;
+        if (StringUtils.isNumeric(id)) {
             retrieved = this.service.getUtenteById(Integer.parseInt(id));
-         return    retrieved != null ? new ResponseEntity<>(retrieved, HttpStatus.FOUND):
+            return retrieved != null ? new ResponseEntity<>(retrieved, HttpStatus.FOUND) :
                     new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);

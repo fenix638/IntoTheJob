@@ -3,6 +3,7 @@ package com.intothejobs.be.services;
 import com.intothejobs.be.businessobject.Utente;
 import com.intothejobs.be.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,6 +14,9 @@ public class UserServiceImpl implements UserService{
     @Autowired
     UserDao dao;
 
+    @Autowired
+    PasswordEncoder encoder;
+
     @Override
     public List<Utente> getAll() {
         return this.dao.getAll();
@@ -20,6 +24,8 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public Utente getUtenteById(Integer id) {
+
+        System.out.println(this.encoder.encode("ciao"));
         return this.dao.getUtenteById(id);
     }
 
