@@ -1,0 +1,54 @@
+section{
+    text-align: center;
+    width: 35%;
+    margin: 0 auto;
+    background-image: linear-gradient(45deg, #222E50, #007991);
+    -moz-border-image: -moz-linear-gradient(top, #439A86 0%, #007991 100%);
+    -webkit-border-image: -webkit-linear-gradient(top, #439A86 0%, #007991 100%);
+    border-image: linear-gradient(to bottom, #439A86 0%, #007991 100%);
+    border-image-slice: 1;
+    border-style: solid;
+    color: #d1dbd3;
+    padding: 2% 0 2% 0;
+}
+
+input{
+    text-align: center;
+    -moz-border-image: -moz-linear-gradient(top, #439A86 0%, #007991 100%);
+    -webkit-border-image: -webkit-linear-gradient(top, #439A86 0%, #007991 100%);
+    border-image: linear-gradient(to bottom, #439A86 0%, #007991 100%);
+    border-image-slice: 1;
+    background: rgba(255, 255, 255, 0.1);
+    width: 50%;
+    padding: 2% 0 2% 0;
+    margin-bottom: 3%;
+    }
+
+.rememberMe {
+    width: unset;
+}
+
+button{
+    width: 50%;
+    background:none;
+    -moz-border-image: -moz-linear-gradient(top, #439A86 0%, #007991 100%);
+    -webkit-border-image: -webkit-linear-gradient(top, #439A86 0%, #007991 100%);
+    border-image: linear-gradient(to bottom, #439A86 0%, #007991 100%);
+    border-image-slice: 1;
+    padding: 1.5% 0 1.5% 0;
+    cursor: pointer;
+    color: #d1dbd3; 
+    font-size: 1em;
+}
+
+img{
+    width: 17%;
+    margin-bottom: 2% ;
+    border-image: linear-gradient(to bottom, #439A86 0%, #007991 100%);
+    border-image-slice: 1;
+}
+
+p{
+
+    font-size: 0.7em;
+}
